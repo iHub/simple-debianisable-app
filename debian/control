@@ -4,11 +4,11 @@ Priority: optional
 Maintainer: Mike Manuthu <manuthu@ihub.co.ke>
 Build-Depends: debhelper (>= 8.0.0), python, dh-virtualenv, python-dev
 Standards-Version: 3.9.3
-Homepage:
-Vcs-Git: git@github.com:...
-Vcs-Browser: https://github.com/...
+Homepage: https://github.com/iHub/simple-debianisable-app
+Vcs-Git: git@github.com:iHub/simple-debianisable-app.git
+Vcs-Browser: https://github.com/iHub/simple-debianisable-app
 
 Package: simple-app
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, python, supervisor, nginx-full
-Description: A simple app
+Description: A simple debianisable app

@@ -1,14 +1,5 @@
 simple-app (1.0) xenial; urgency=medium
 
-  [ Mike Manuthu ]
-  * [ce692f] Package builds and installs
-
-  [  ]
-
- --  <vagrant@isc>  Mon, 07 May 2018 04:08:31 +0000
-
-simple-app (0.1) unstable; urgency=low
-
   * Initial Release.
 
- -- Mike Manuthu <manuthu@ihub.co.ke>  Fri, 05 May 2018 15:32:07 +0000
+ -- Mike Manuthu <manuthu@ihub.co.ke>  Mon, 07 May 2018 04:08:31 +0000
