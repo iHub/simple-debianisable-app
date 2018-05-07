@@ -5,7 +5,6 @@ setup(
     name="simple-app",
     version="0.1",
     packages=find_packages("lib"),
-    test_suite='nose.collector',
     package_dir={'': 'lib'},
     scripts=['bin/run_simple_app.py'],
     entry_points={
