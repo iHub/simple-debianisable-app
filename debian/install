@@ -1,0 +1,3 @@
+etc/nginx/sites-available/simple-app.conf	/etc/nginx/sites-available
+etc/simpleapp/server_conf.py	/etc/simpleapp
+etc/supervisor/conf.d/simple-app.conf	/etc/supervisor/conf.d

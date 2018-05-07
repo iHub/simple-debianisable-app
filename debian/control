@@ -1,0 +1,14 @@
+Source: simple-app
+Section: unknown
+Priority: optional
+Maintainer: Mike Manuthu <manuthu@ihub.co.ke>
+Build-Depends: debhelper (>= 8.0.0), python, dh-virtualenv, python-dev
+Standards-Version: 3.9.3
+Homepage:
+Vcs-Git: git@github.com:...
+Vcs-Browser: https://github.com/...
+
+Package: simple-app
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python, supervisor, nginx-full
+Description: A simple app

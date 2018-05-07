@@ -1,0 +1,42 @@
+#!/bin/sh
+# postinst script for a simple python app
+
+set -e
+PKG_USER="simpleapp"
+LOG_DIR=/var/log/simpleapp
+
+case "$1" in
+    configure)
+        # Create a user to run the application as
+        adduser 2>/dev/null --system --no-create-home --group $PKG_USER;
+        mkdir -m 755 -p ${LOG_DIR}
+        chown ${PKG_USER}.root ${LOG_DIR}
+
+       # If there's a default site, disable it
+       DEFAULT_SITE=/etc/nginx/sites-enabled/default
+       [ -e $DEFAULT_SITE  ] && rm $DEFAULT_SITE
+
+       # Enable the nginx site for the website
+       SRC=/etc/nginx/sites-available/simple-app.conf
+       DST=/etc/nginx/sites-enabled/simple-app.conf
+       [ ! -e $DST -o -L $DST ] && ln -s $SRC $DST
+
+       # Restart services
+       service nginx reload
+
+       # supervisor
+       supervisorctl reread
+       supervisorctl update
+       supervisorctl restart simpleapp
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0

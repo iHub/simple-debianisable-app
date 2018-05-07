@@ -1,0 +1,4 @@
+*.pyc
+debian/debhelper-build-stamp
+debian/files
+debian/simple-app*
